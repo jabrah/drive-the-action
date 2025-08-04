@@ -510,7 +510,10 @@ steer_damping = 3.0
 front_wheel_grip = 8.0
 rear_wheel_grip = 8.0
 
-[node name="Level1" parent="." instance=ExtResource("36_hr0se")]
+[node name="Level1" parent="." node_paths=PackedStringArray("world", "car1", "car2") instance=ExtResource("36_hr0se")]
+world = NodePath("..")
+car1 = NodePath("../car1")
+car2 = NodePath("../car2")
 
 [node name="UI" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true

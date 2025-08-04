@@ -12,6 +12,10 @@ extends Node3D
 var parked_in_goal1 := false
 var parked_in_goal2 := false
 
+func _ready() -> void:
+	if get_parent().world:
+		world = get_parent().world
+
 func _process(_delta: float) -> void:
 	if not _car_stopped(car1) or not _car_stopped(car2):
 		return

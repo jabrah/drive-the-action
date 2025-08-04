@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://vnvok6ko43xs"]
+[gd_scene load_steps=7 format=3 uid="uid://vnvok6ko43xs"]
 
 [ext_resource type="Script" uid="uid://cqw4mhqvbaq5l" path="res://src/level_1.gd" id="1_e2ncj"]
+[ext_resource type="Script" uid="uid://cldp6po2d51da" path="res://src/resource/Quest.gd" id="2_e2ncj"]
 [ext_resource type="PackedScene" uid="uid://bg0sxn2tl1pcw" path="res://addons/Kenney/prototype-kit/GLB format/indicator-special-arrow.glb" id="3_6tt7i"]
 [ext_resource type="PackedScene" uid="uid://bjvu53kagvhkn" path="res://addons/Kenney/prototype-kit/GLB format/indicator-square-c.glb" id="4_c7kpy"]
 [ext_resource type="PackedScene" uid="uid://c1kxndew7l0a1" path="res://src/assets/deco/construction_barrier.tscn" id="5_g0g7y"]
@@ -10,6 +11,12 @@ size = Vector3(13.055, 3.0343, 6.52921)
 
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_e2ncj")
+
+[node name="Quest" type="Node3D" parent="." node_paths=PackedStringArray("spawn1", "spawn2")]
+script = ExtResource("2_e2ncj")
+spawn1 = NodePath("../Spawn1")
+spawn2 = NodePath("../Spawn2")
+metadata/_custom_type_script = "uid://cldp6po2d51da"
 
 [node name="Spawn1" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.234, 0, -29.124)
