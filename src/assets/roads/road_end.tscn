@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgq0cs1wxbfes"]
+
+[ext_resource type="PackedScene" uid="uid://ccsun6ftmlqhf" path="res://addons/Kenney/city-roads-kit/GLB format/road-end.glb" id="1_q2c4v"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q2c4v"]
+size = Vector3(9, 0.18, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dutaa"]
+size = Vector3(0.9, 0.18, 9)
+
+[node name="road-end" instance=ExtResource("1_q2c4v")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00136757, 0.089551, -4.05096)
+shape = SubResource("BoxShape3D_q2c4v")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00136757, 0.089551, 4.05134)
+shape = SubResource("BoxShape3D_q2c4v")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.053, 0.09, 0)
+shape = SubResource("BoxShape3D_dutaa")

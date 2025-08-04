@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://0tom8u604mok"]
+
+[ext_resource type="PackedScene" uid="uid://d0onqhq13a232" path="res://src/assets/roads/road_intersection.tscn" id="1_msl1m"]
+[ext_resource type="PackedScene" uid="uid://e64v6jjhqe1m" path="res://src/assets/roads/road_intersection_barrier.tscn" id="2_bsdkk"]
+
+[node name="road-intersection" instance=ExtResource("1_msl1m")]
+
+[node name="road-intersection-barrier" parent="." index="4" instance=ExtResource("2_bsdkk")]
+transform = Transform3D(0.995, 0, 0, 0, 0.995, 0, 0, 0, 0.995, 0, 0, 0)

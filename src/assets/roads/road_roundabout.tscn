@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu2tm5bqmma7i"]
+
+[ext_resource type="PackedScene" uid="uid://bx7wroayb5g38" path="res://addons/Kenney/city-roads-kit/FBX format/road-roundabout.fbx" id="1_jyxan"]
+
+[node name="road-roundabout" instance=ExtResource("1_jyxan")]

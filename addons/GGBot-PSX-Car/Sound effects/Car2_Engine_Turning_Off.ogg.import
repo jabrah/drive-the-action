@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bi8ao6ccmxt4o"
+path="res://.godot/imported/Car2_Engine_Turning_Off.ogg-ecde72094c00b934af14ad403c1bd4dc.oggvorbisstr"
+
+[deps]
+
+source_file="res://addons/GGBot-PSX-Car/Sound effects/Car2_Engine_Turning_Off.ogg"
+dest_files=["res://.godot/imported/Car2_Engine_Turning_Off.ogg-ecde72094c00b934af14ad403c1bd4dc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

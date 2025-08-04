@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://crm8ym6q3nftr"]
+
+[ext_resource type="PackedScene" uid="uid://dgq0cs1wxbfes" path="res://src/assets/roads/road_end.tscn" id="1_yqgkp"]
+[ext_resource type="PackedScene" uid="uid://cecpkka782yha" path="res://src/assets/roads/road_end_barrier.tscn" id="2_ycgr3"]
+
+[node name="road-end" instance=ExtResource("1_yqgkp")]
+
+[node name="road-end-barrier" parent="." index="4" instance=ExtResource("2_ycgr3")]
+transform = Transform3D(0.995, 0, 0, 0, 0.995, 0, 0, 0, 0.995, 0, 0, 0)

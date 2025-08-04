@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3fmsby1434st"]
+
+[ext_resource type="PackedScene" uid="uid://i4mr8fw7fikj" path="res://src/assets/roads/road_straight.tscn" id="1_7gwxu"]
+[ext_resource type="PackedScene" uid="uid://dfde1twosnbsg" path="res://src/assets/roads/road_straight_barrier.tscn" id="2_kwt8c"]
+
+[node name="road-straight" instance=ExtResource("1_7gwxu")]
+
+[node name="road-straight-barrier" parent="." index="3" instance=ExtResource("2_kwt8c")]
+transform = Transform3D(0.995, 0, 0, 0, 0.995, 0, 0, 0, 0.995, 0, 0, 0)

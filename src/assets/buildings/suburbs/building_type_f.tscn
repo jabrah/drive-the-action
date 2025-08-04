@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnnxd572l6p6f"]
+
+[ext_resource type="PackedScene" uid="uid://nwgfvh0rn5io" path="res://addons/Kenney/city-suburban-kit/GLB format/building-type-f.glb" id="1_m4dq7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m4dq7"]
+size = Vector3(0.272217, 2.9433, 0.273438)
+
+[node name="building-type-f" instance=ExtResource("1_m4dq7")]
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5.13314, 0)
+depth = 10.215
+polygon = PackedVector2Array(-5.98418, 5.79541, -6.30304, 5.66193, -6.42909, 5.3505, -6.4324, -0.947155, -6.28618, -1.26502, -5.98103, -1.39852, -5.07306, -1.40202, -4.90484, -1.57024, -1.475, -1.58426, -1.47287, -4.9906, -1.28596, -5.17752, 5.89997, -5.18075, 6.08688, -4.99384, 6.08072, 5.79976, 5.88913, 5.98668, -4.90505, 5.9743, -5.07794, 5.80608)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.49301, 1.46573, -2.15858)
+shape = SubResource("BoxShape3D_m4dq7")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70063, 1.46573, -2.15858)
+shape = SubResource("BoxShape3D_m4dq7")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.892938, 1.46573, -5.76065)
+shape = SubResource("BoxShape3D_m4dq7")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.49875, 1.46573, -5.76065)
+shape = SubResource("BoxShape3D_m4dq7")

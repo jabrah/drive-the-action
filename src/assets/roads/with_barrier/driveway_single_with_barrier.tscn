@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://h0xmwglk5l6q"]
+
+[ext_resource type="PackedScene" uid="uid://b20ki7qopxnng" path="res://src/assets/roads/road_driveway_single.tscn" id="1_33o5y"]
+[ext_resource type="PackedScene" uid="uid://3pjhkcfcxls1" path="res://src/assets/roads/road_driveway_single_barrier.tscn" id="2_fk8ce"]
+
+[node name="road-driveway-single" instance=ExtResource("1_33o5y")]
+
+[node name="road-driveway-single-barrier" parent="." index="5" instance=ExtResource("2_fk8ce")]
+transform = Transform3D(0.995, 0, 0, 0, 0.995, 0, 0, 0, 0.995, 0, 0, 0)

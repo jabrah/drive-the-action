@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://vnvok6ko43xs"]
+
+[ext_resource type="Script" uid="uid://cqw4mhqvbaq5l" path="res://src/level_1.gd" id="1_e2ncj"]
+[ext_resource type="PackedScene" uid="uid://bg0sxn2tl1pcw" path="res://addons/Kenney/prototype-kit/GLB format/indicator-special-arrow.glb" id="3_6tt7i"]
+[ext_resource type="PackedScene" uid="uid://bjvu53kagvhkn" path="res://addons/Kenney/prototype-kit/GLB format/indicator-square-c.glb" id="4_c7kpy"]
+[ext_resource type="PackedScene" uid="uid://c1kxndew7l0a1" path="res://src/assets/deco/construction_barrier.tscn" id="5_g0g7y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c4ogm"]
+size = Vector3(13.055, 3.0343, 6.52921)
+
+[node name="Level1" type="Node3D"]
+script = ExtResource("1_e2ncj")
+
+[node name="Spawn1" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.234, 0, -29.124)
+
+[node name="Spawn2" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4561, 0, -18.3156)
+
+[node name="Interactables" type="Node3D" parent="."]
+
+[node name="Goal" type="Area3D" parent="Interactables"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.9002, 0, -15.7304)
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactables/Goal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.096405, 1.01715, 0.639999)
+shape = SubResource("BoxShape3D_c4ogm")
+
+[node name="Deco" type="Node3D" parent="."]
+
+[node name="indicator-special-arrow2" parent="Deco" instance=ExtResource("3_6tt7i")]
+transform = Transform3D(-2.5, 0, -3.77489e-07, 0, 2.5, 0, 3.77489e-07, 0, -2.5, 4.26935, 0.0187616, 6.89808)
+
+[node name="indicator-special-arrow3" parent="Deco" instance=ExtResource("3_6tt7i")]
+transform = Transform3D(-1.09278e-07, 0, -2.5, 0, 2.5, 0, 2.5, 0, -1.09278e-07, 57.7645, 0.0187616, 6.83198)
+
+[node name="indicator-special-arrow4" parent="Deco" instance=ExtResource("3_6tt7i")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 57.7645, 0.0187616, -28.8897)
+
+[node name="indicator-special-arrow5" parent="Deco" instance=ExtResource("3_6tt7i")]
+transform = Transform3D(-1.09278e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278e-07, 39.6987, 0.0187616, -28.8897)
+
+[node name="indicator-square-c2" parent="Deco" instance=ExtResource("4_c7kpy")]
+transform = Transform3D(5.52, 0, 0, 0, 5.52, 0, 0, 0, 5.52, 39.8693, 0.211956, -15.5237)
+
+[node name="indicator-square-c3" parent="Deco" instance=ExtResource("4_c7kpy")]
+transform = Transform3D(5.52, 0, 0, 0, 5.52, 0, 0, 0, 5.52, 46.0248, 0.211956, -15.5237)
+
+[node name="construction-barrier6" parent="Deco" instance=ExtResource("5_g0g7y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 60.3235, 0, -34.4716)
+
+[node name="construction-barrier7" parent="Deco" instance=ExtResource("5_g0g7y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 57.6486, 0, -34.4716)
+
+[node name="construction-barrier8" parent="Deco" instance=ExtResource("5_g0g7y")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 54.9985, 0, -34.4716)
+
+[connection signal="body_entered" from="Interactables/Goal" to="." method="_on_goal_entered"]
+[connection signal="body_exited" from="Interactables/Goal" to="." method="_on_goal_exited"]

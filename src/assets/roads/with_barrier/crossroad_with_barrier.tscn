@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://qpti7t001ka3"]
+
+[ext_resource type="PackedScene" uid="uid://dw5g3v03uqs8g" path="res://src/assets/roads/road_crossroad.tscn" id="1_5epo0"]
+[ext_resource type="PackedScene" uid="uid://bc2omtvnj8bjg" path="res://src/assets/roads/road_crossroad_barrier.tscn" id="2_rd2pc"]
+
+[node name="road-crossroad" instance=ExtResource("1_5epo0")]
+
+[node name="road-crossroad-barrier" parent="." index="1" instance=ExtResource("2_rd2pc")]

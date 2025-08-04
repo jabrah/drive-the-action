@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://brlvgdb4updbt"]
+
+[ext_resource type="PackedScene" uid="uid://bo0h1d4mf8o4p" path="res://addons/Kenney/city-roads-kit/FBX format/road-slant.fbx" id="1_fkwtm"]
+
+[node name="road-slant" instance=ExtResource("1_fkwtm")]
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="." index="1"]
+depth = 9.0
+polygon = PackedVector2Array(4.49348, 2.34357, 4.50324, 0.00768191, -4.4979, -0.00044018, -4.49989, 0.0937563)

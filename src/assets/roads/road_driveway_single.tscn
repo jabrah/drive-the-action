@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b20ki7qopxnng"]
+
+[ext_resource type="PackedScene" uid="uid://dc05e5y7gslwl" path="res://addons/Kenney/city-roads-kit/FBX format/road-driveway-single.fbx" id="1_w43l8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w43l8"]
+size = Vector3(3.33069, 0.186951, 0.900879)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cxil7"]
+size = Vector3(8.99438, 0.187622, 0.908203)
+
+[node name="road-driveway-single" instance=ExtResource("1_w43l8")]
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="." index="1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 4.09)
+depth = 2.345
+polygon = PackedVector2Array(-0.410471, 0.180271, 0.490092, 0.0890615, 0.49114, -5.13196e-05, -0.41152, 0.000997111)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83455, 0.092926, 4.04893)
+shape = SubResource("BoxShape3D_w43l8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.83725, 0.0881875, 4.04893)
+shape = SubResource("BoxShape3D_w43l8")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0897827, -4.05251)
+shape = SubResource("BoxShape3D_cxil7")

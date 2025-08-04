@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl7s824vh2it7"]
+
+[ext_resource type="PackedScene" uid="uid://dy5u3007usi4v" path="res://addons/Kenney/city-roads-kit/FBX format/road-slant-barrier.fbx" id="1_bjwls"]
+[ext_resource type="Material" uid="uid://cdatar3ors673" path="res://src/assets/roads/road_intersection_barrier.tres" id="2_8l1c4"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8l1c4"]
+data = PackedVector3Array(-4.5, 0.72, 4.5, 4.5, 2.97, 4.23, 4.5, 2.97, 4.5, 4.5, 2.97, 4.23, -4.5, 0.72, 4.5, -4.5, 0.72, 4.23, 4.5, 2.25, 4.5, 4.5, 2.97, 4.23, 4.5, 2.25, 4.05, 4.5, 2.97, 4.23, 4.5, 2.25, 4.5, 4.5, 2.97, 4.5, 4.5, 2.25, 4.05, -4.5, 0, 4.5, 4.5, 2.25, 4.5, -4.5, 0, 4.5, 4.5, 2.25, 4.05, -4.5, 0, 4.05, -4.5, 0.72, 4.5, 4.5, 2.25, 4.5, -4.5, 0, 4.5, 4.5, 2.25, 4.5, -4.5, 0.72, 4.5, 4.5, 2.97, 4.5, 4.5, 2.97, -4.23, -4.5, 0.72, -4.5, 4.5, 2.97, -4.5, -4.5, 0.72, -4.5, 4.5, 2.97, -4.23, -4.5, 0.72, -4.23, 4.5, 2.25, -4.5, 4.5, 2.97, -4.23, 4.5, 2.97, -4.5, 4.5, 2.97, -4.23, 4.5, 2.25, -4.5, 4.5, 2.25, -4.05, -4.5, 0.72, -4.5, -4.5, 0, -4.05, -4.5, 0, -4.5, -4.5, 0, -4.05, -4.5, 0.72, -4.5, -4.5, 0.72, -4.23, 4.5, 2.25, 4.05, -4.5, 0.72, 4.23, -4.5, 0, 4.05, -4.5, 0.72, 4.23, 4.5, 2.25, 4.05, 4.5, 2.97, 4.23, -4.5, 0.72, 4.23, -4.5, 0, 4.5, -4.5, 0, 4.05, -4.5, 0, 4.5, -4.5, 0.72, 4.23, -4.5, 0.72, 4.5, -4.5, 0, -4.5, 4.5, 2.25, -4.05, 4.5, 2.25, -4.5, 4.5, 2.25, -4.05, -4.5, 0, -4.5, -4.5, 0, -4.05, 4.5, 2.25, -4.5, -4.5, 0.72, -4.5, -4.5, 0, -4.5, -4.5, 0.72, -4.5, 4.5, 2.25, -4.5, 4.5, 2.97, -4.5, -4.5, 0.72, -4.23, 4.5, 2.25, -4.05, -4.5, 0, -4.05, 4.5, 2.25, -4.05, -4.5, 0.72, -4.23, 4.5, 2.97, -4.23)
+
+[node name="road-slant-barrier" instance=ExtResource("1_bjwls")]
+
+[node name="road-slant-barrier" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_8l1c4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConcavePolygonShape3D_8l1c4")

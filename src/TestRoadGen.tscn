@@ -1,0 +1,132 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1lthkaeyleno"]
+
+[ext_resource type="PackedScene" uid="uid://b23t4gdgxvgqk" path="res://src/cars/car1/car1.tscn" id="1_cg1an"]
+[ext_resource type="Script" uid="uid://6dvbtfxbijul" path="res://addons/road-generator/nodes/road_manager.gd" id="1_w7e1a"]
+[ext_resource type="Material" uid="uid://dpashsuk5lr4x" path="res://addons/road-generator/resources/road_texture.material" id="2_cg1an"]
+[ext_resource type="Script" uid="uid://c484lldim71lg" path="res://addons/road-generator/nodes/road_container.gd" id="3_embkt"]
+[ext_resource type="Script" uid="uid://ep0tpfm30lh4" path="res://addons/road-generator/nodes/road_point.gd" id="4_1027q"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cg1an"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_embkt"]
+sky_material = SubResource("ProceduralSkyMaterial_cg1an")
+
+[sub_resource type="Environment" id="Environment_1027q"]
+background_mode = 2
+sky = SubResource("Sky_embkt")
+tonemap_mode = 2
+
+[node name="TestRoadGen" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1027q")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.847122, 0.454058, -0.276072, 0, 0.519519, 0.854459, 0.531399, 0.723831, -0.440096, 0, 0, 0)
+shadow_enabled = true
+
+[node name="car" parent="." instance=ExtResource("1_cg1an")]
+transform = Transform3D(0.993723, 0, -0.111868, 0, 1, 0, 0.111868, 0, 0.993723, -18.8684, 0.055052, 8.77453)
+max_steer = 0.15
+max_brake_force = 3.0
+max_wheel_rpm = 1200.0
+steer_damping = 0.5
+
+[node name="RoadManager" type="Node3D" parent="."]
+script = ExtResource("1_w7e1a")
+material_resource = ExtResource("2_cg1an")
+metadata/_custom_type_script = "uid://6dvbtfxbijul"
+
+[node name="Road_001" type="Node3D" parent="RoadManager"]
+script = ExtResource("3_embkt")
+use_lowpoly_preview = true
+collision_mask = 3
+
+[node name="RP_001" type="Node3D" parent="RoadManager/Road_001"]
+transform = Transform3D(0.981709, 0, -0.190387, 0, 1, 0, 0.190387, 0, 0.981709, -28.7609, 0, 66.8637)
+script = ExtResource("4_1027q")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+next_mag = 90.5862
+lane_width = 2.5
+prior_pt_init = NodePath("../RP_002")
+next_pt_init = NodePath("../RP_010")
+
+[node name="RP_002" type="Node3D" parent="RoadManager/Road_001"]
+transform = Transform3D(0.981709, 0.000270172, -0.190387, 0, 0.999999, 0.00141906, 0.190387, -0.00139311, 0.981708, 3.52442, 0, -136.934)
+script = ExtResource("4_1027q")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 125.084
+next_mag = 90.5862
+lane_width = 2.0
+prior_pt_init = NodePath("../RP_003")
+next_pt_init = NodePath("../RP_001")
+
+[node name="RP_003" type="Node3D" parent="RoadManager/Road_001"]
+transform = Transform3D(0.0346402, 0.00158235, -0.999399, 0.00138291, 0.999998, 0.00163123, 0.999399, -0.00143859, 0.0346379, 242.466, 0, -238.731)
+script = ExtResource("4_1027q")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 173.987
+next_mag = 125.084
+lane_width = 2.0
+prior_pt_init = NodePath("../RP_007")
+next_pt_init = NodePath("../RP_002")
+
+[node name="RP_006" type="Node3D" parent="RoadManager/Road_001"]
+transform = Transform3D(-0.311818, 0.00206233, 0.95014, 0.000241221, 0.999998, -0.00209138, -0.950142, -0.000422938, -0.311818, 526.683, 0, -65.7796)
+script = ExtResource("4_1027q")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 50.4593
+next_mag = 133.631
+lane_width = 2.0
+prior_pt_init = NodePath("../RP_007")
+next_pt_init = NodePath("../RP_008")
+
+[node name="RP_007" type="Node3D" parent="RoadManager/Road_001"]
+transform = Transform3D(0.694699, -0.000624534, 0.7193, -0.00173692, 0.999995, 0.00254576, -0.719298, -0.00301791, 0.694695, 430.574, 0, -216.876)
+script = ExtResource("4_1027q")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 50.4593
+next_mag = 50.4593
+lane_width = 2.0
+prior_pt_init = NodePath("../RP_003")
+next_pt_init = NodePath("../RP_006")
+
+[node name="RP_008" type="Node3D" parent="RoadManager/Road_001"]
+transform = Transform3D(0.0921762, 0.000274048, 0.995743, -0.000611236, 1, -0.000218638, -0.995742, -0.00058848, 0.0921764, 792.385, 0, -214.917)
+script = ExtResource("4_1027q")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 133.631
+next_mag = 144.719
+lane_width = 2.0
+prior_pt_init = NodePath("../RP_006")
+next_pt_init = NodePath("../RP_009")
+
+[node name="RP_009" type="Node3D" parent="RoadManager/Road_001"]
+transform = Transform3D(0.980578, 0.00045791, -0.19613, -0.000153307, 0.999999, 0.00156825, 0.196131, -0.00150772, 0.980576, 884.257, 0, 59.5516)
+script = ExtResource("4_1027q")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 144.719
+next_mag = 256.17
+lane_width = 2.0
+prior_pt_init = NodePath("../RP_008")
+next_pt_init = NodePath("../RP_010")
+
+[node name="RP_010" type="Node3D" parent="RoadManager/Road_001"]
+transform = Transform3D(-0.0989248, 0.00104988, -0.995094, 0.00154562, 0.999998, 0.000901396, 0.995094, -0.00144887, -0.0989262, 417.91, 0, 273.133)
+script = ExtResource("4_1027q")
+traffic_dir = Array[int]([2, 2, 1, 1])
+lanes = Array[int]([2, 4, 4, 2])
+prior_mag = 256.17
+next_mag = 256.17
+lane_width = 2.0
+prior_pt_init = NodePath("../RP_009")
+next_pt_init = NodePath("../RP_001")

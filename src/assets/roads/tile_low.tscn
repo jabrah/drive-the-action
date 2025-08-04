@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpm7iapt02xjc"]
+
+[ext_resource type="PackedScene" uid="uid://bckwmxmdnotjd" path="res://addons/Kenney/city-roads-kit/FBX format/tile-low.fbx" id="1_fx18o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fx18o"]
+size = Vector3(9, 0.180115, 9)
+
+[node name="tile-low" instance=ExtResource("1_fx18o")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0895081, 0)
+shape = SubResource("BoxShape3D_fx18o")

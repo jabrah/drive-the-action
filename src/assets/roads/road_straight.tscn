@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://i4mr8fw7fikj"]
+
+[ext_resource type="PackedScene" uid="uid://cf85lf780ic0q" path="res://addons/Kenney/city-roads-kit/FBX format/road-straight.fbx" id="1_ubeoa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ubeoa"]
+size = Vector3(9, 0.179688, 0.896)
+
+[node name="road-straight" instance=ExtResource("1_ubeoa")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0899745, 4.05)
+shape = SubResource("BoxShape3D_ubeoa")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, -4.05)
+shape = SubResource("BoxShape3D_ubeoa")

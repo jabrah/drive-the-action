@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://byby6ue2cjl2t"]
+
+[ext_resource type="PackedScene" uid="uid://bu2tm5bqmma7i" path="res://src/assets/roads/road_roundabout.tscn" id="1_0aa4c"]
+[ext_resource type="PackedScene" uid="uid://c0uo66jt18cgx" path="res://src/assets/roads/road_roundabout_barrier.tscn" id="2_36lok"]
+
+[node name="road-roundabout" instance=ExtResource("1_0aa4c")]
+
+[node name="road-roundabout-barrier" parent="." index="1" instance=ExtResource("2_36lok")]
+transform = Transform3D(0.995, 0, 0, 0, 0.995, 0, 0, 0, 0.995, 0, 0, 0)

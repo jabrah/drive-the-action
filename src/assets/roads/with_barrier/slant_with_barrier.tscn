@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy7qiyvoed3n1"]
+
+[ext_resource type="PackedScene" uid="uid://brlvgdb4updbt" path="res://src/assets/roads/road_slant.tscn" id="1_tv4rm"]
+[ext_resource type="PackedScene" uid="uid://cl7s824vh2it7" path="res://src/assets/roads/road_slant_barrier.tscn" id="2_07vd0"]
+
+[node name="road-slant" instance=ExtResource("1_tv4rm")]
+
+[node name="road-slant-barrier" parent="." index="2" instance=ExtResource("2_07vd0")]
+transform = Transform3D(0.995, 0, 0, 0, 0.995, 0, 0, 0, 0.995, 0, 0, 0)
